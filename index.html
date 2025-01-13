@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluciones MIR</title>
+  <style>
+    /* Agregar un fondo de pantalla */
+    body {
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    /* Usar colores más vibrantes */
+    .logo {
+      color: #007bff;
+    }
+    
+    /* Agregar imágenes y gráficos */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .galeria img {
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+   
+.logo {
+  width: 800px;
+  margin-bottom: 20px;
+  animation: mover 2s infinite;
+}
+
+@keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+#proyectos {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#proyectos h2 {
+  color: #007bff;
+}
+
+#proyectos p {
+  color: #666;
+}
+
+.links {
+  margin: 20px 0;
+}
+
+.links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.links a:hover {
+  background-color: #0056b3;
+}
+</style>
+<body>
+  <div class="header">
+    <div class="logo"></div>
+  </div>
+  <div class="social-icons">
+    <a href="(link unavailable)" target="_blank">WhatsApp <img src="Imagen whats.jpg" alt="Logo de WhatsApp"></a>
+    <a href="(link unavailable)" target="_blank">Instagram <img src="instagram.jpg" alt="Logo de Instagram"></a>
+  </div>
+  <section id="proyectos">
+    <h2>Proyectos y Mantenimientos</h2>
+    <p>Aquí puedes agregar información sobre proyectos y servicios de mantenimiento.</p>
+    <div class="links">
+      <a href="#imagenes-proyectos">Más información</a>
+      <section id="venta">
+        <h2>Venta de Materiales</h2>
+        <p>Aquí puedes agregar información sobre la venta de materiales.</p>
+        <div class="links">
+          <a href="#" id="showImages" onclick="showImages()">Más información</a>
+        </div>
+        <div id="imagesContainer" style="display: none;">
+          <img src=ventamir.jpg alt="Descripción de la Imagen 1" class="slide" />
+          <img src=ventamir2.jpg alt="Descripción de la Imagen 2" class="slide" />
+        </div>
+      
+        <!-- Información de contacto -->
+        <div class="contact-info" style="margin-top: 20px;">
+          <h3>Contacto</h3>
+          <p>Instagram: <a href="https://instagram.com/SOLUCIONES.MIR" target="_blank">@SOLUCIONES.MIR</a></p>
+          <p>Teléfono: 442 415 4040</p>
+          <p>Correo Electrónico: <a href="mailto:mir.soluciones0@gmail.com">mir.soluciones0@gmail.com</a></p>
+        </div>
+      </section>
+      
+      <style>
+        .slide {
+          width: 100%; /* Ajusta según tu diseño */
+          max-width: 600px; /* Ajusta el tamaño máximo de la imagen */
+          display: none; /* Esconde las imágenes inicialmente */
+          transition: transform 0.4s ease; /* Efecto de transición */
+        }
+      
+        #imagesContainer img.active {
+          display: block; /* Muestra la imagen activa */
+          transform: scale(1.05); /* Efecto de aumento */
+        }
+      
+        .contact-info {
+          background-color: #f9f9f9; /* Color de fondo para la sección de contacto */
+          padding: 15px; /* Espaciado interno */
+          border-radius: 5px; /* Esquinas redondeadas */
+        }
+      </style>
+      
+      <script>
+        let currentImage = 0;
+      
+        function showImages() {
+          const images = document.querySelectorAll("#imagesContainer .slide");
+          document.getElementById("imagesContainer").style.display = "block";
+      
+          // Inicializa y muestra la primera imagen
+          if (images.length > 0) {
+            images[currentImage].classList.add("active");
+            
+            // Cambia la imagen cada 3 segundos
+            setInterval(() => {
+              images[currentImage].classList.remove("active");
+              currentImage = (currentImage + 1) % images.length; // Ciclo entre imágenes
+              images[currentImage].classList.add("active");
+            }, 3000);
+          }
+        }
+      </script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .header {
+    background-color: #F5DEB3; /* Fondo color crema */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 80%; /* Abarca toda la barra superior */
+    height: 350px; /* Altura del logo */
+    background-image: url('MIR.jpg'); /* Imagen del logo */
+    background-size: contain; /* Ajusta el tamaño de la imagen */
+    background-position: center; /* Centra la imagen */
+    background-color: #FFC0CB; /* Fondo blanco para el logo */
+  }
+
+  /* ... (resto del código de estilos) ... */
+
+@keyframes moverIzquierda {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+  
+  @keyframes saltar {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #proyectos {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #proyectos h2 {
+    color: #007bff;
+  }
+  
+  #proyectos p {
+    color: #666;
+  }
+  
+  .links {
+    margin: 20px 0;
+  }
+  
+  .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .links a:hover {
+    background-color: #0056b3;
+  }
+  #venta {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#venta h2 {
+  color: #007bff;
+}
+
+#venta p {
+  color: #666;
+}
+
+  /* ... (código de estilos que ya tienes) ... */
+
+  .header {
+    background-color: #F5DEB3; /* Fondo color crema para la barra */
+    padding: 20px;
+    text-align: center;
+  }
+
+  
+</style>    
+  </section>
+  <div id="imagenes-proyectos" style="display:none;">
+    <img src="somos.jpg" alt="Imagen 1">
+    <img src="valores.jpg" alt="Imagen 2">
+    <button id="continuar-btn" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Continuar</button>
+  </div>
+  <div id="servicios-proyectos" style="display:none;">
+    <h2>Nuestros Servicios</h2>
+    <section>
+      <style>
+        /* ... (código de estilos que ya tienes) ... */
+      
+        section {
+          background-color: #f7f7f7;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          animation: desplazar 5s ease-in-out;
+        }
+      
+        h3 {
+          color: #007bff;
+          font-size: 24px;
+          font-weight: bold;
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      
+        .galeria img {
+          width: 200px;
+          height: 150px;
+          margin: 10px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.5s ease-in-out;
+        }
+      
+        .galeria img:hover {
+          transform: scale(1.1);
+        }
+      
+        @keyframes desplazar {
+          0% {
+            transform: translateY(100px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+      
+        .icono {
+          font-size: 48px;
+          color: #007bff;
+          margin: 10px;
+        }
+      
+        .grafico {
+          width: 100%;
+          height: 200px;
+          background-color: #f7f7f7;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+        }
+      
+        .grafico canvas {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+      
+      <section>
+        <h3>1. Instalaciones eléctricas y mantenimiento <i class="icono fas fa-bolt"></i></h3>
+        <div class="galeria">
+          <img src="ELEC.jpg" alt="Imagen 1">
+          <img src="elect.jpg" alt="Imagen 2">
+          <img src="imagen3.jpg" alt="Imagen 3">
+          <img src="imagen4.jpg" alt="Imagen 4">
+          <img src="imagen5.jpg" alt="Imagen 5">
+        </div>
+        <div class="grafico">
+          <canvas id="grafico-1"></canvas>
+        </div>
+      </section>
+      
+      <section>
+        <h3>2. Diseño y iluminación <i class="icono fas fa-lightbulb"></i></h3>
+        <div class="galeria">
+          <img src="Iluminacion1.jpg" alt="Imagen 6">
+          <img src="Iluminacion2.jpg" alt="Imagen 7">
+          <img src="imagen8.jpg" alt="Imagen 8">
+          <img src="imagen9.jpg" alt="Imagen 9">
+          <img src="imagen10.jpg" alt="Imagen 10">
+        </div>
+        <div class="grafico">
+          <canvas id="grafico-2"></canvas>
+        </div>
+      </section>
+        <section>
+        <h3>3. Herrería y soldadura</h3>
+        <div class="galeria">
+        <img src=Herreria1.jpg alt="Imagen 11">
+        <img src=Herreria2.jpg alt="Imagen 12">
+        <img src=Herreria3.jpg alt="Imagen 13">
+        <img src=Herreria4.jpg alt="Imagen 14">
+        <img src=Herreria5.jpg alt="Imagen 15">
+        </div>
+        </section>
+        <section>
+        <h3>4. Sistemas de seguridad</h3>
+        <div class="galeria">
+        <img src="imagen16.jpg" alt="Imagen 16">
+        <img src="imagen17.jpg" alt="Imagen 17">
+        <img src="imagen18.jpg" alt="Imagen 18">
+        <img src="imagen19.jpg" alt="Imagen 19">
+        <img src="imagen20.jpg" alt="Imagen 20">
+        </div>g
+        </section>
+        <section>
+        <h3>5. Plafon y tablaroca</h3>
+        <div class="galeria">
+        <img src="imagen21.jpg" alt="Imagen 21">
+        <img src="imagen22.jpg" alt="Imagen 22">
+        <img src="imagen23.jpg" alt="Imagen 23">
+        <img src="imagen24.jpg" alt="Imagen 24">
+        <img src="imagen25.jpg" alt="Imagen 25">
+        </div>
+        </section>
+        <section>
+        <h3>6. Pintura y impermeabilizante</h3>
+        <div class="galeria">
+        <img src=pintura1.jpg alt="Imagen 26">
+        <img src=pintura2.jpg alt="Imagen 27">
+        <img src=pintura3.jpg alt="Imagen 28">
+        <img src=pintura4.jpg alt="Imagen 29">
+        <img src="imagen30.jpg" alt="Imagen 30">
+        </div>
+        </section>
+        <section>
+        <h3>7. Aires Acondicionados</h3>
+        <div class="galeria">
+        <img src="imagen31.jpg" alt="Imagen 31">
+        <img src="imagen32.jpg" alt="Imagen 32">
+        <img src="imagen33.jpg" alt="Imagen 33">
+        <img src="imagen34.jpg" alt="Imagen 34">
+        <img src="imagen35.jpg" alt="Imagen 35">
+        </div>
+        </section>
+        <section>
+        <h3>8. Plomeria</h3>
+        <div class="galeria">
+        <img src="imagen36.jpg" alt="Imagen 36">
+        <img src="imagen37.jpg" alt="Imagen 37">
+        <img src="imagen38.jpg" alt="Imagen 38">
+        <img src="imagen39.jpg" alt="Imagen 39">
+        <img src="imagen40.jpg" alt="Imagen 40">
+        </div>
+        </section>
+        <section>
+        <h3>9. Sistemas de acceso inteligente</h3>
+        <div class="galeria">
+        <img src="imagen41.jpg" alt="Imagen 41">
+        <img src="imagen42.jpg" alt="Imagen 42">
+        <img src="imagen43.jpg" alt="Imagen 43">
+        <img src="imagen44.jpg" alt="Imagen 44">
+        <img src="imagen45.jpg" alt="Imagen 45">
+        </div>
+        </section>
+        </div>
+        <script>
+            document.getElementById("continuar-btn").addEventListener("click", function() {
+            document.getElementById("imagenes-proyectos").style.display = "none";
+            document.getElementById("servicios-proyectos").style.display = "block";
+            });
+            document.querySelector("a[href='#imagenes-proyectos']").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("imagenes-proyectos").style.display = "block";
+            });
+            </script>
+            </body>
+            </html>
